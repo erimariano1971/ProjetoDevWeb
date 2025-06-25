@@ -116,3 +116,93 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
+// -----------------------------------
+// Curtidas
+// -----------------------------------
+document.addEventListener('DOMContentLoaded', function () {
+  const botoesLike = document.querySelectorAll('.like-btn');
+
+  botoesLike.forEach(btn => {
+    btn.addEventListener('click', function () {
+      const icone = this.querySelector('i');
+      let likes = parseInt(this.dataset.likes);
+
+      if (icone.classList.contains('bi-heart')) {
+        icone.classList.replace('bi-heart', 'bi-heart-fill');
+        icone.classList.add('text-danger');
+        likes++;
+      } else {
+        icone.classList.replace('bi-heart-fill', 'bi-heart');
+        icone.classList.remove('text-danger');
+        likes--;
+      }
+
+      // Atualiza apenas o número depois do ícone
+      this.dataset.likes = likes;
+      const textoNode = document.createTextNode(` ${likes}`);
+      this.innerHTML = '';
+      this.appendChild(icone);
+      this.appendChild(textoNode);
+
+      this.classList.add('pulse');
+      setTimeout(() => this.classList.remove('pulse'), 200);
+    });
+  });
+});
+
+// -----------------------------------
+// Adiciona comentários
+// -----------------------------------
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.getElementById('form-comentario');
+  const nomeInput = document.getElementById('nome-comentario');
+  const msgInput = document.getElementById('mensagem-comentario');
+  const lista = document.getElementById('comentarios-lista');
+  const chave = window.location.pathname; // Um identificador único por receita
+
+  function renderizarComentarios() {
+    const armazenados = JSON.parse(localStorage.getItem('comentarios_' + chave)) || [];
+    lista.innerHTML = '';
+    armazenados.forEach(({ nome, texto }, index) => {
+  const div = document.createElement('div');
+  div.className = 'border rounded p-3 mb-3';
+  div.innerHTML = `
+    <div class="d-flex justify-content-between align-items-start">
+      <div><strong>${nome}:</strong> ${texto}</div>
+      <button class="btn-close btn-sm apagar-comentario" data-index="${index}" title="Excluir"></button>
+    </div>
+  `;
+  lista.appendChild(div);
+});
+  }
+
+  lista.addEventListener('click', function (e) {
+  if (e.target.classList.contains('apagar-comentario')) {
+    const index = parseInt(e.target.dataset.index);
+    const chave = window.location.pathname;
+    const comentarios = JSON.parse(localStorage.getItem('comentarios_' + chave)) || [];
+
+    comentarios.splice(index, 1); // remove o comentário pelo índice
+    localStorage.setItem('comentarios_' + chave, JSON.stringify(comentarios));
+    renderizarComentarios(); // atualiza visualmente
+  }
+});
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const nome = nomeInput.value.trim();
+    const texto = msgInput.value.trim();
+
+    if (!nome || !texto) return;
+
+    const novos = JSON.parse(localStorage.getItem('comentarios_' + chave)) || [];
+    novos.push({ nome, texto });
+    localStorage.setItem('comentarios_' + chave, JSON.stringify(novos));
+
+    nomeInput.value = '';
+    msgInput.value = '';
+    renderizarComentarios();
+  });
+
+  renderizarComentarios();
+});
