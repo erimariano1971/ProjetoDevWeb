@@ -82,7 +82,18 @@ document.addEventListener('DOMContentLoaded', function () {
     const correspondeBusca = texto.includes(termo);
 
     const mostrar = correspondeCategoria && correspondeBusca;
-    card.style.display = mostrar ? "block" : "none";
+    if (mostrar) {
+     card.classList.remove("fade-out");
+     card.classList.add("fade-in");
+     card.style.display = "block";
+    } else {
+     card.classList.remove("fade-in");
+     card.classList.add("fade-out");
+     setTimeout(() => {
+     card.style.display = "none";
+     }, 300);
+    }
+
     if (mostrar) visiveis++;
   });
 
@@ -171,9 +182,9 @@ document.addEventListener('DOMContentLoaded', function () {
       <div><strong>${nome}:</strong> ${texto}</div>
       <button class="btn-close btn-sm apagar-comentario" data-index="${index}" title="Excluir"></button>
     </div>
-  `;
-  lista.appendChild(div);
-});
+    `;
+     lista.appendChild(div);
+    });
   }
 
   lista.addEventListener('click', function (e) {
@@ -205,4 +216,67 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   renderizarComentarios();
+});
+
+
+// -----------------------------------
+// Animação tetxos
+// -----------------------------------
+document.addEventListener('DOMContentLoaded', function () {
+  const animaveis = document.querySelectorAll('.texto-animado');
+
+const observerTexto = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visivel');
+      observerTexto.unobserve(entry.target);
+    }
+  });
+});
+
+animaveis.forEach(el => observerTexto.observe(el));
+
+// Animação cards
+
+const elementosAnimaveis = document.querySelectorAll('.texto-animado, .card-receita');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        if (entry.target.classList.contains('card-receita')) {
+          entry.target.classList.add('apareceu');
+        } else {
+          entry.target.classList.add('visivel');
+        }
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  elementosAnimaveis.forEach(el => observer.observe(el));
+});
+// Transição entre pags 
+
+document.body.classList.add('slide-entrando');
+
+const linksPagina = document.querySelectorAll('a[href]:not([target])');
+
+linksPagina.forEach(link => {
+  const url = link.getAttribute('href');
+
+  if (
+    !url || 
+    url.startsWith('#') || 
+    url.startsWith('javascript') || 
+    url.includes('mailto')
+  ) return;
+
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.body.classList.add('slide-saindo');
+
+    setTimeout(() => {
+      window.location.href = url;
+    }, 400); // tempo de transição
+  });
 });

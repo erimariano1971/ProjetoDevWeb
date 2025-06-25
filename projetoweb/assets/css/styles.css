@@ -470,3 +470,57 @@ textarea.is-invalid {
    width: 100%; 
  } 
 } 
+
+/* */ 
+.texto-animado {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.texto-animado.visivel {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card-receita {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+.card-receita.apareceu {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card-receita.fade-out {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: all 0.3s ease-in;
+}
+
+.card-receita.fade-in {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 0.3s ease-out;
+}
+
+/* Entrada inicial — desliza da esquerda */
+body.slide-entrando {
+  opacity: 0;
+  transform: translateX(-40px);
+  animation: slideIn 0.5s ease forwards;
+}
+
+/* Saída ao clicar em um link — desliza para a direita */
+body.slide-saindo {
+  transform: translateX(40px);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+@keyframes slideIn {
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

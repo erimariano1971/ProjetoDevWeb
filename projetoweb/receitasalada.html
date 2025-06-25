@@ -83,9 +83,18 @@
         <div class="border rounded p-3">
           <strong>Rafael:</strong> Adicionei abacate e ficou ainda melhor. Receita aprovada!
         </div>
+        <div class="mt-5">
+        <h5>Deixe seu comentário:</h5>
+        <form id="form-comentario" class="mb-3">
+         <input type="text" id="nome-comentario" class="form-control mb-2" placeholder="Seu nome" required>
+         <textarea id="mensagem-comentario" class="form-control mb-2" placeholder="Escreva aqui..." required></textarea>
+         <button type="submit" class="btn btn-warning">Comentar</button>
+        </form>
+      <div id="comentarios-lista"></div>
       </div>
     </div>
   </main>
-
+  
+<script src="assets/js/scripts.js"></script>
 </body>
 </html>
