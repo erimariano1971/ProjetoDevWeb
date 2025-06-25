@@ -3,19 +3,18 @@
 // -----------------------------------
 document.addEventListener('DOMContentLoaded', function () {
   const form = document.getElementById('form-receita');
+  if (!form) return; // <- isso evita erro nas outras páginas
   const camposObrigatorios = form.querySelectorAll('input[required], textarea[required], select[required]');
   const mensagem = document.getElementById('mensagem-feedback');
+  const imagemInput = document.getElementById('imagem');
 
   function resetarErros() {
-    camposObrigatorios.forEach(campo => {
-      campo.classList.remove('is-invalid');
-    });
+    camposObrigatorios.forEach(campo => campo.classList.remove('is-invalid'));
   }
 
   function mostrarMensagemSucesso() {
     mensagem.classList.remove('d-none');
     mensagem.classList.add('show');
-
     setTimeout(() => {
       mensagem.classList.remove('show');
       mensagem.classList.add('d-none');
@@ -27,24 +26,49 @@ document.addEventListener('DOMContentLoaded', function () {
     resetarErros();
 
     let valido = true;
-
     camposObrigatorios.forEach(campo => {
-  if (!campo.value.trim() || (campo.tagName === 'SELECT' && campo.value === 'Escolha...')) {
-    campo.classList.add('is-invalid'); // <-- ESSA linha aplica a borda vermelha
-    valido = false;
-  }
-});
+      if (!campo.value.trim() || (campo.tagName === 'SELECT' && campo.value === 'Escolha...')) {
+        campo.classList.add('is-invalid');
+        valido = false;
+      }
+    });
 
-    if (valido) {
-      form.reset();
-      mostrarMensagemSucesso();
+    if (!valido) return;
+
+    const dados = {
+      nome: document.getElementById('nome').value,
+      email: document.getElementById('email').value,
+      titulo: document.getElementById('titulo').value,
+      categoria: document.getElementById('categoria').value,
+      ingredientes: document.getElementById('ingredientes').value,
+      preparo: document.getElementById('preparo').value,
+      tempo: document.getElementById('tempo').value,
+      porcoes: document.getElementById('porcoes').value,
+      imagem: ''
+    };
+
+    if (imagemInput && imagemInput.files.length > 0) {
+      const reader = new FileReader();
+      reader.onload = function () {
+        dados.imagem = reader.result;
+        salvarReceita(dados);
+      };
+      reader.readAsDataURL(imagemInput.files[0]);
+    } else {
+      salvarReceita(dados);
     }
   });
 
+  function salvarReceita(receita) {
+    const receitasSalvas = JSON.parse(localStorage.getItem('receitas')) || [];
+    receitasSalvas.push(receita);
+    localStorage.setItem('receitas', JSON.stringify(receitasSalvas));
+    form.reset();
+    mostrarMensagemSucesso();
+  }
+
   camposObrigatorios.forEach(campo => {
-    campo.addEventListener('input', () => {
-      campo.classList.remove('is-invalid');
-    });
+    campo.addEventListener('input', () => campo.classList.remove('is-invalid'));
   });
 });
 
@@ -283,4 +307,46 @@ linksPagina.forEach(link => {
       window.location.href = url;
     }, 400); // tempo de transição
   });
+});
+
+// -----------------------------------
+// ADD receitas no mural
+// -----------------------------------
+document.addEventListener('DOMContentLoaded', function () {
+  const mural = document.querySelector('.cards-receitas');
+
+  if (!mural) return;
+
+  const receitas = JSON.parse(localStorage.getItem('receitas')) || [];
+
+  receitas.forEach((receita, index) => {
+  const card = document.createElement('div');
+  card.classList.add('card-receita', 'fade-in');
+  card.setAttribute('data-categoria', receita.categoria.toLowerCase());
+  card.style.display = 'block';
+
+  const imagem = receita.imagem || 'assets/img/padrao.png';
+  const resumo = receita.ingredientes.length > 60
+    ? receita.ingredientes.slice(0, 60) + '...'
+    : receita.ingredientes;
+
+  card.innerHTML = `
+    <img src="${imagem}" alt="${receita.titulo}">
+    <div class="texto">
+      <h3>${receita.titulo}</h3>
+      <p>${resumo}</p>
+      <button class="btn btn-sm btn-outline-danger apagar-receita mt-2" data-index="${index}">Apagar</button>
+    </div>
+  `;
+
+  // 🗑️ Evento para apagar a receita
+  card.querySelector('.apagar-receita').addEventListener('click', () => {
+    receitas.splice(index, 1); // remove do array
+    localStorage.setItem('receitas', JSON.stringify(receitas)); // salva novo estado
+    card.remove(); // remove do DOM
+  });
+
+  mural.appendChild(card);
+});
+
 });
