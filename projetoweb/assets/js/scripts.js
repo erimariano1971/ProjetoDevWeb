@@ -220,8 +220,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 // -----------------------------------
-// Animação tetxos
+// Animações do site
 // -----------------------------------
+
+// Animações texto
+
 document.addEventListener('DOMContentLoaded', function () {
   const animaveis = document.querySelectorAll('.texto-animado');
 
@@ -255,6 +258,7 @@ const elementosAnimaveis = document.querySelectorAll('.texto-animado, .card-rece
 
   elementosAnimaveis.forEach(el => observer.observe(el));
 });
+
 // Transição entre pags 
 
 document.body.classList.add('slide-entrando');
