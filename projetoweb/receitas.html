@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Todas as Receitas | Nourriture</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <!-- NAVBAR (igual às outras páginas) -->
+  <header class="py-3 sticky-top shadow-sm" >
+    <div class="container header-pill d-flex justify-content-between align-items-center px-4">
+      <div class="d-flex align-items-center">
+        <img src="assets/img/logo.png" alt="Logo Nourriture" width="36" height="36" class="me-2">
+        <h1 class="h5 m-0 fw-bold">Nourriture</h1>
+      </div>
+      <form id="form-busca" class="d-flex flex-grow-1 mx-lg-3 my-2 my-lg-0">
+       <div class="input-group"> 
+         <input type="text" class="form-control rounded-pill border-0 search-input" placeholder="Buscar receitas..." id="barra-pesquisa">
+         <span class="input-group-text border-0 bg-transparent pe-3"> 
+          <i class="bi bi-search"></i> 
+         </span> 
+       </div>
+</form>
+      <nav>
+        <ul class="nav">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="receitas.html" class="nav-link">Receitas</a></li>
+          <li class="nav-item"><a href="formulario.html" class="nav-link">Envie</a></li>
+          <li class="nav-item"><a href="contato.html" class="nav-link">Contato</a></li>
+          <li class="nav-item"><a href="dicas.html" class="nav-link">Dicas</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="receitas-section">
+    <h2 class="titulo-receitas">Todas as Receitas</h2>
+
+    <!-- Botões de filtro -->
+    <div class="filtros">
+      <button class="filtro-btn ativo" data-filtro="todas">Todas</button>
+      <button class="filtro-btn" data-filtro="salgada">Salgadas</button>
+      <button class="filtro-btn" data-filtro="doce">Doces</button>
+    </div>
+
+    <!-- Cards de receitas -->
+    <div class="cards-receitas">
+      <p id="mensagem-nenhuma" class="text-center mt-4 text-muted d-none">
+         Nenhuma receita encontrada com esse filtro 😢
+      </p>
+
+      <!-- Receita salgada -->
+      <div class="card-receita" data-categoria="salgada">
+        <img src="assets/img/curry.png" alt="Frango ao Curry" />
+        <div class="texto">
+          <h3>Frango ao Curry</h3>
+          <p>Sabor exótico com temperos marcantes.</p>
+        </div>
+      </div>
+
+      <!-- Receita salgada -->
+      <div class="card-receita" data-categoria="salgada">
+        <img src="assets/img/salada.png" alt="Salada de Quinoa" />
+        <div class="texto">
+          <h3>Salada de Quinoa</h3>
+          <p>Leve, nutritiva e perfeita para o verão.</p>
+        </div>
+      </div>
+
+      <!-- Receita salgada -->
+      <div class="card-receita" data-categoria="salgada">
+        <img src="assets/img/lasanhadefrango.png" alt="Lasanha de Frango" />
+        <div class="texto">
+          <h3>Lasanha de Carne</h3>
+          <p>Receita clássica com queijo gratinado.</p>
+        </div>
+      </div>
+
+      <!-- Receita salgada -->
+      <div class="card-receita" data-categoria="salgada">
+        <img src="assets/img/arrozdeforno.png" alt="Arroz de Forno" />
+        <div class="texto">
+          <h3>Arroz de Forno</h3>
+          <p>Receita para o dia a dia.</p>
+        </div>
+      </div>
+
+      <!-- Receita doce -->
+      <div class="card-receita" data-categoria="doce">
+        <img src="assets/img/bolochocolate.png" alt="Bolo de Chocolate" />
+        <div class="texto">
+          <h3>Bolo de Chocolate</h3>
+          <p>Fofinho, úmido e com cobertura cremosa.</p>
+        </div>
+      </div>
+
+      <!-- Receita doce -->
+      <div class="card-receita" data-categoria="doce">
+        <img src="assets/img/pudim.png" alt="Pudim de Leite" />
+        <div class="texto">
+          <h3>Pudim de Leite</h3>
+          <p>Tradicional e irresistível.</p>
+        </div>
+      </div>
+
+  <!-- Receita doce -->
+      <div class="card-receita" data-categoria="doce">
+        <img src="assets/img/torta.png" alt="Torta Holandesa" />
+        <div class="texto">
+          <h3>Torta Holandesa</h3>
+          <p>Receita para ampliar sua confeitaria.</p>
+        </div>
+      </div>
+
+      <!-- Receita doce -->
+      <div class="card-receita" data-categoria="doce">
+        <img src="assets/img/mousse.png" alt="Mousse de Maracuja" />
+        <div class="texto">
+          <h3>Mousse de Maracuja</h3>
+          <p>Muito cremoso, gosto da fruta.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<script src="assets/js/scripts.js"></script>
+</body>
+</html>
+

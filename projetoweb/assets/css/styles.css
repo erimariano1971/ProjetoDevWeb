@@ -1,0 +1,466 @@
+/* Reset */ 
+* { 
+ margin: 0; 
+ padding: 0; 
+ box-sizing: border-box; 
+} 
+body { 
+ font-family: 'Segoe UI', sans-serif; 
+ /*background: linear-gradient(120deg, #fff4e3, #ffe9cc);*/ 
+ background-color:#ff8f05;/*#ffbd6a;*/ 
+ color: #333; 
+} 
+ 
+:root { 
+ --primary-color: #FF9F1C; 
+ --dark-color: #0A0A0A; 
+ --light-color: #FDFFFC; 
+ --gray-color: #E5E5E5; 
+} 
+/*navegacoes da pagina inicial*/ 
+   .nav-link { 
+     padding: 0.5rem 1rem; 
+       color: #333; 
+       font-weight: 500; 
+       font-size: 14px; 
+       position: relative; 
+       transition: all 0.2s ease; 
+   } /*para criar uam linhazinha em baixo e deixar bonito*/ 
+   
+   .nav-link:after { 
+     content: ''; 
+     position: absolute; 
+     width: 0; 
+     height: 2px; 
+     bottom: 0; 
+     left: 50%; 
+     background-color: var(--primary-color); 
+     transition: all 0.3s ease; 
+     transform: translateX(-50%); 
+     opacity: 0; 
+   } 
+   
+   .nav-link:hover:after { 
+     width: 70%; 
+     opacity: 1; 
+   } 
+   
+   /*botoes*/ 
+   .btn { 
+     display: inline-block; 
+     padding: 0.8rem 2rem; 
+     margin: 0 0.5rem; 
+     border-radius: 50px; 
+     text-decoration: none; 
+     font-weight: bold; 
+     transition: all 0.3s ease; 
+   } 
+       
+   .btn:hover { 
+     transform: translateY(-3px); 
+     box-shadow: 0 5px 15px rgba(0,0,0,0.2); 
+   } 
+ 
+   .btn-warning { 
+     background-color: var(--primary-color); 
+     border-color: var(--primary-color); 
+     color: white; 
+     transition: all 0.3s ease; 
+   } 
+   
+   .btn-warning:hover { 
+     background-color: #e68a00; 
+     border-color: #e68a00; 
+     transform: translateY(-2px); 
+   } 
+   
+ /* Header em formazinha de pilula com blur */ 
+.header-pill { 
+ background: rgba(255, 255, 255, 0.35); 
+ backdrop-filter: blur(10px); 
+ -webkit-backdrop-filter: blur(10px); 
+ border-radius: 20px; 
+ box-shadow: 0 6px 12px rgba(0, 0, 0, 0.06); 
+ border: 1px solid rgba(255, 255, 255, 0.3); 
+} 
+ 
+/* Campo de busca com efeitinho e sombra */ 
+.search-input { 
+ background-color: rgba(255, 255, 255, 0.85); 
+ padding: 6px 12px; 
+ font-size: 14px; 
+ height: auto; 
+ transition: all 0.3s ease; 
+} 
+ 
+.search-input:focus { 
+ box-shadow: 0 0 0 2px rgba(255, 159, 28, 0.3); 
+} 
+ 
+ 
+/*HERO SECTION*/ 
+ 
+.section-background { 
+ position: relative; 
+ background: linear-gradient(120deg, #fff4e3, #ffe9cc); 
+ /*background: linear-gradient(120deg, #fddaa5, #ffe9cc);*/ 
+ overflow: hidden; 
+ z-index: 0; 
+} 
+ 
+.section-background::before { 
+ content: ''; 
+ position: absolute; 
+ top: -70px; 
+ left: -70px; 
+ width: 600px; 
+ height: 600px; 
+ background: radial-gradient(circle at center, #ffcf91 0%, #ffbd6a 
+100%); 
+ opacity: 0.35; 
+ filter: blur(30px); 
+ border-radius: 50%; 
+ z-index: 1; 
+} 
+ 
+.section-background::after { 
+ content: ''; 
+ position: absolute; 
+ bottom: -100px; 
+ right: -100px; 
+ width: 500px; 
+ height: 500px; 
+ background: radial-gradient(circle at center, #ffc26d, #ffe0b2); 
+ opacity: 0.3; 
+ filter: blur(40px); 
+ border-radius: 40% 60% 70% 30% / 30% 60% 40% 70%; 
+ z-index: 9999; 
+} 
+ 
+.section-background > .container { 
+ position: relative; 
+ z-index: 1; 
+} 
+ 
+ /* CARD GERAL */ 
+  .recipe-card { 
+   transition: all 0.3s ease; 
+   border-radius: 1rem; 
+   border: none; 
+   overflow: hidden; 
+ } 
+ 
+ .recipe-card:hover { 
+   transform: translateY(-6px); 
+   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08); 
+ } 
+ /* IMAGEM DO CARD */ 
+ .recipe-card .card-img-top { 
+   height: 160PX; 
+   object-fit: cover; 
+   border-top-left-radius: 1rem; 
+   border-top-right-radius: 1rem; 
+ } 
+  /* BOTÃO */ 
+  .recipe-card .btn-outline-dark { 
+   transition: all 0.3s ease; 
+ } 
+ .recipe-card .btn-outline-dark:hover { 
+   background-color: #e26600; 
+   color: #000; 
+   border-color: transparent; 
+ } 
+  /*envie*/ 
+  .custom-banner { 
+   background-color: #ffe9cc; 
+   padding: 60px 20px; 
+   display: flex; 
+   justify-content: center; 
+ } 
+  .custom-banner .card { 
+   background-color: #2b2322; 
+   border-radius: 50px; 
+   display: flex; 
+   align-items: center; 
+   max-width: 1000px; 
+   width: 100%; 
+   overflow: hidden; 
+   padding: 40px; 
+   box-shadow: 0 10px 30px rgba(0,0,0,0.3); 
+   position: relative; 
+ } /*CRIA O QUADRADO ARREDONDADO NO FUNDO*/ 
+ 
+ .custom-banner .content { 
+   display: flex; 
+   justify-content: space-between; 
+   align-items: center; 
+   width: 100%; 
+   gap: 40px; 
+ } /*AJUSTA ELE*/ 
+ 
+ .custom-banner .text-box { 
+   color: white; 
+   flex: 1; 
+   font-family: 'Poppins', sans-serif; 
+ } 
+ .custom-banner .text-box h5 { 
+   color: #ffa148; 
+   font-size: 1rem; 
+   margin-bottom: 10px; 
+ } /*O COMPARTILHE*/ 
+ 
+ .custom-banner .text-box h2 { 
+   font-size: 2rem; 
+   margin-bottom: 20px; 
+ }/*O TITULO*/ 
+ 
+ .custom-banner .text-box p { 
+   font-size: 1rem; 
+   margin-bottom: 30px; 
+   color: #ccc; 
+ }/*O PARAGRAFO*/ 
+ 
+ .custom-banner .btn-enviar { 
+   background-color: #ffa148; 
+   color: white; 
+   text-decoration: none; 
+   padding: 12px 30px; 
+   border-radius: 25px; 
+   font-weight: bold; 
+   transition: background 0.3s; 
+ }/* O BOTAOZINHO DE ENVIAR*/ 
+ 
+ .custom-banner .btn-enviar:hover { 
+   background-color: #ff8c00; 
+ } 
+  .custom-banner .image-box { 
+   flex: 1; 
+   position: relative; 
+ } 
+
+input.is-invalid,
+select.is-invalid,
+textarea.is-invalid {
+  border: 2px solid #dc3545 !important;
+  background-color: #fff0f0 !important;
+}
+
+ /* ------------------------------------------ 
+    SEÇÃO SOBRE 
+ ------------------------------------------ */ 
+ section.bg-white h3 { 
+   font-size: 1.8rem; 
+ } 
+ section.bg-white .icon-wrapper { 
+   background-color: #fff7dd; 
+   box-shadow: 0 4px 12px rgba(255, 203, 58, 0.1); 
+ } 
+ section.bg-white h5 { 
+   font-weight: 600; 
+   margin-bottom: 0.5rem; 
+ } 
+  section.bg-white p { 
+   font-size: 0.95rem; 
+ } 
+ 
+  /* ------------------------------------------ 
+    NEWSLETTER 
+ ------------------------------------------ */ 
+ section.bg-dark { 
+   background: linear-gradient(135deg, #1f1f1f, #2a2a2a); 
+   color: white; 
+ } 
+ section.bg-dark h3 { 
+   font-size: 1.6rem; 
+ } 
+  section.bg-dark .form-control { 
+   border: none; 
+   border-radius: 30px 0 0 30px; 
+   padding: 0.75rem 1.25rem; 
+ } 
+ section.bg-dark .btn-warning { 
+   border-radius: 0 30px 30px 0; 
+   font-weight: 500; 
+ } 
+ 
+   /* ------------------------------------------ 
+    RODAPÉ 
+ ------------------------------------------ */ 
+ footer { 
+   background-color: #121212; 
+   color: white; 
+ } 
+  footer h6 { 
+   font-weight: 600; 
+   font-size: 1rem; 
+ } 
+  footer a { 
+   transition: color 0.2s ease; 
+ } 
+  footer a:hover { 
+   color: #ffcb55; 
+ } 
+  footer .bi { 
+   transition: transform 0.3s ease; 
+ } 
+  footer .bi:hover { 
+   transform: scale(1.2); 
+   color: #ffcb55; 
+ } 
+  footer hr { 
+   opacity: 0.1; 
+ } 
+  footer p, 
+ footer li, 
+ footer small { 
+   font-size: 0.9rem; 
+   line-height: 1.6; 
+ } 
+ 
+   /* ------------------------------ 
+    Página de Receita Individual 
+ ------------------------------ */ 
+  main { 
+   background: linear-gradient(120deg, #fff4e3, #ffe9cc); 
+   padding-top: 4rem; 
+   padding-bottom: 4rem; 
+ } 
+ 
+ main h2 { 
+   font-weight: 700; 
+   font-size: 2.2rem; 
+   color: #444; 
+ } 
+ main ul, main ol { 
+   font-size: 1rem; 
+   line-height: 1.8; 
+   padding-left: 1.2rem; 
+   color: #444; 
+ } 
+ main h5 { 
+   font-weight: 600; 
+   margin-bottom: 0.75rem; 
+   color: #333; 
+ } 
+  main img { 
+   border-radius: 1rem; 
+   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08); 
+ } 
+ 
+ main p { 
+   font-size: 1rem; 
+   color: #555; 
+ } 
+  main .border { 
+   background-color: #fffdf8; 
+   border: 1px solid #ffe6b8; 
+   border-radius: 12px; 
+   font-size: 0.95rem; 
+   color: #333; 
+   box-shadow: 0 4px 12px rgba(255, 204, 100, 0.08); 
+ } 
+  .ratio iframe { 
+   border-radius: 1rem; 
+   border: 1px solid #f0f0f0; 
+ } 
+ 
+   /* === Página receitas.html === */ 
+    .receitas-section { 
+     padding: 3rem 2rem; 
+     text-align: center; 
+   } 
+   
+   .titulo-receitas { 
+     font-size: 2.2rem; 
+     margin-bottom: 2rem; 
+     font-weight: 600; 
+   } 
+   
+   .filtros { 
+     display: flex; 
+     justify-content: center; 
+     gap: 1rem; 
+     margin-bottom: 2rem; 
+     flex-wrap: wrap; 
+   } 
+   
+   .filtro-btn { 
+     padding: 0.6rem 1.2rem; 
+     border: 2px solid #00000015; 
+     background-color: #ffffff; 
+     border-radius: 25px; 
+     cursor: pointer; 
+     font-weight: 500; 
+     transition: all 0.3s ease; 
+   } 
+   
+   .filtro-btn:hover, 
+   .filtro-btn.ativo { 
+     background-color: #ffdd8d; 
+     border-color: #f5c000; 
+   } 
+   
+   .cards-receitas { 
+     display: grid; 
+     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
+     gap: 2rem; 
+     max-width: 1200px; 
+     margin: auto; 
+   } 
+   
+   .card-receita { 
+     background-color: white; 
+     border-radius: 12px; 
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.07); 
+     overflow: hidden; 
+     text-align: left; 
+     transition: transform 0.3s ease; 
+   } 
+   
+   .card-receita:hover { 
+     transform: scale(1.02); 
+   } 
+   
+   .card-receita img { 
+     width: 100%; 
+     height: 180px; 
+     object-fit: cover; 
+   } 
+   
+   .card-receita .texto { 
+     padding: 1rem; 
+   } 
+   
+   .card-receita h3 { 
+     font-size: 1.2rem; 
+     margin: 0 0 0.5rem 0; 
+   } 
+ 
+   /* Ajustes de Responsividade */ 
+@media (max-width: 992px) { 
+ .header-pill { 
+   border-radius: 20px !important; 
+   padding: 0.5rem !important; 
+ } 
+  .hero-section h2 { 
+   font-size: 2.5rem; 
+ } 
+} 
+ 
+@media (max-width: 768px) { 
+ .custom-banner .card { 
+   border-radius: 20px !important; 
+ } 
+  .recipe-section .card { 
+   margin-bottom: 1.5rem; 
+ } 
+} 
+ 
+@media (max-width: 576px) { 
+ .hero-section h2 { 
+   font-size: 2rem; 
+ } 
+  .btn-enviar { 
+   width: 100%; 
+ } 
+} 
