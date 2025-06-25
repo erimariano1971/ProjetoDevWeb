@@ -18,67 +18,67 @@ body {
  --gray-color: #E5E5E5; 
 } 
 /*navegacoes da pagina inicial*/ 
-   .nav-link { 
-     padding: 0.5rem 1rem; 
-       color: #333; 
-       font-weight: 500; 
-       font-size: 14px; 
-       position: relative; 
-       transition: all 0.2s ease; 
-   } /*para criar uam linhazinha em baixo e deixar bonito*/ 
-   
-   .nav-link:after { 
-     content: ''; 
-     position: absolute; 
-     width: 0; 
-     height: 2px; 
-     bottom: 0; 
-     left: 50%; 
-     background-color: var(--primary-color); 
-     transition: all 0.3s ease; 
-     transform: translateX(-50%); 
-     opacity: 0; 
-   } 
-   
-   .nav-link:hover:after { 
-     width: 70%; 
-     opacity: 1; 
-   } 
-   
-   /*botoes*/ 
-   .btn { 
-     display: inline-block; 
-     padding: 0.8rem 2rem; 
-     margin: 0 0.5rem; 
-     border-radius: 50px; 
-     text-decoration: none; 
-     font-weight: bold; 
-     transition: all 0.3s ease; 
-   } 
-       
-   .btn:hover { 
-     transform: translateY(-3px); 
-     box-shadow: 0 5px 15px rgba(0,0,0,0.2); 
-   } 
+ .nav-link { 
+ padding: 0.5rem 1rem; 
+ color: #333; 
+ font-weight: 500; 
+ font-size: 14px; 
+ position: relative; 
+ transition: all 0.2s ease; 
+ } /*para criar uam linhazinha em baixo e deixar bonito*/ 
  
-   .btn-warning { 
-     background-color: var(--primary-color); 
-     border-color: var(--primary-color); 
-     color: white; 
-     transition: all 0.3s ease; 
-   } 
-   
-   .btn-warning:hover { 
-     background-color: #e68a00; 
-     border-color: #e68a00; 
-     transform: translateY(-2px); 
-   } 
-   
-   /* animação coração*/
-   .pulse {
-  transform: scale(1.2);
-  transition: transform 0.2s ease;
-   }
+ .nav-link:after { 
+ content: ''; 
+ position: absolute; 
+ width: 0; 
+ height: 2px; 
+ bottom: 0; 
+ left: 50%; 
+ background-color: var(--primary-color); 
+ transition: all 0.3s ease; 
+ transform: translateX(-50%); 
+ opacity: 0; 
+ } 
+ 
+ .nav-link:hover:after { 
+ width: 70%; 
+ opacity: 1; 
+ } 
+ 
+ /*botoes*/ 
+ .btn { 
+ display: inline-block; 
+ padding: 0.8rem 2rem; 
+ margin: 0 0.5rem; 
+ border-radius: 50px; 
+ text-decoration: none; 
+ font-weight: bold; 
+ transition: all 0.3s ease; 
+ } 
+ 
+ .btn:hover { 
+ transform: translateY(-3px); 
+ box-shadow: 0 5px 15px rgba(0,0,0,0.2); 
+ } 
+ 
+ .btn-warning { 
+ background-color: var(--primary-color); 
+ border-color: var(--primary-color); 
+ color: white; 
+ transition: all 0.3s ease; 
+ } 
+ 
+ .btn-warning:hover { 
+ background-color: #e68a00; 
+ border-color: #e68a00; 
+ transform: translateY(-2px); 
+ } 
+ 
+ /* animação coração*/
+ .pulse {
+ transform: scale(1.2);
+ transition: transform 0.2s ease;
+ }
 
  /* Header em formazinha de pilula com blur */ 
 .header-pill { 
@@ -149,329 +149,395 @@ body {
 } 
  
  /* CARD GERAL */ 
-  .recipe-card { 
-   transition: all 0.3s ease; 
-   border-radius: 1rem; 
-   border: none; 
-   overflow: hidden; 
+ .recipe-card { 
+ transition: all 0.3s ease; 
+ border-radius: 1rem; 
+ border: none; 
+ overflow: hidden; 
  } 
  
  .recipe-card:hover { 
-   transform: translateY(-6px); 
-   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08); 
+ transform: translateY(-6px); 
+ box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08); 
  } 
  /* IMAGEM DO CARD */ 
  .recipe-card .card-img-top { 
-   height: 160PX; 
-   object-fit: cover; 
-   border-top-left-radius: 1rem; 
-   border-top-right-radius: 1rem; 
+ height: 160PX; 
+ object-fit: cover; 
+ border-top-left-radius: 1rem; 
+ border-top-right-radius: 1rem; 
  } 
-  /* BOTÃO */ 
-  .recipe-card .btn-outline-dark { 
-   transition: all 0.3s ease; 
+ /* BOTÃO */ 
+ .recipe-card .btn-outline-dark { 
+ transition: all 0.3s ease; 
  } 
  .recipe-card .btn-outline-dark:hover { 
-   background-color: #e26600; 
-   color: #000; 
-   border-color: transparent; 
+ background-color: #e26600; 
+ color: #000; 
+ border-color: transparent; 
  } 
-  /*envie*/ 
-  .custom-banner { 
-   background-color: #ffe9cc; 
-   padding: 60px 20px; 
-   display: flex; 
-   justify-content: center; 
+ /*envie*/ 
+ .custom-banner { 
+ background-color: #ffe9cc; 
+ padding: 60px 20px; 
+ display: flex; 
+ justify-content: center; 
  } 
-  .custom-banner .card { 
-   background-color: #2b2322; 
-   border-radius: 50px; 
-   display: flex; 
-   align-items: center; 
-   max-width: 1000px; 
-   width: 100%; 
-   overflow: hidden; 
-   padding: 40px; 
-   box-shadow: 0 10px 30px rgba(0,0,0,0.3); 
-   position: relative; 
+ .custom-banner .card { 
+ background-color: #2b2322; 
+ border-radius: 50px; 
+ display: flex; 
+ align-items: center; 
+ max-width: 1000px; 
+ width: 100%; 
+ overflow: hidden; 
+ padding: 40px; 
+ box-shadow: 0 10px 30px rgba(0,0,0,0.3); 
+ position: relative; 
  } /*CRIA O QUADRADO ARREDONDADO NO FUNDO*/ 
  
  .custom-banner .content { 
-   display: flex; 
-   justify-content: space-between; 
-   align-items: center; 
-   width: 100%; 
-   gap: 40px; 
+ display: flex; 
+ justify-content: space-between; 
+ align-items: center; 
+ width: 100%; 
+ gap: 40px; 
  } /*AJUSTA ELE*/ 
  
  .custom-banner .text-box { 
-   color: white; 
-   flex: 1; 
-   font-family: 'Poppins', sans-serif; 
+ color: white; 
+ flex: 1; 
+ font-family: 'Poppins', sans-serif; 
  } 
  .custom-banner .text-box h5 { 
-   color: #ffa148; 
-   font-size: 1rem; 
-   margin-bottom: 10px; 
+ color: #ffa148; 
+ font-size: 1rem; 
+ margin-bottom: 10px; 
  } /*O COMPARTILHE*/ 
  
  .custom-banner .text-box h2 { 
-   font-size: 2rem; 
-   margin-bottom: 20px; 
+ font-size: 2rem; 
+ margin-bottom: 20px; 
  }/*O TITULO*/ 
  
  .custom-banner .text-box p { 
-   font-size: 1rem; 
-   margin-bottom: 30px; 
-   color: #ccc; 
+ font-size: 1rem; 
+ margin-bottom: 30px; 
+ color: #ccc; 
  }/*O PARAGRAFO*/ 
  
  .custom-banner .btn-enviar { 
-   background-color: #ffa148; 
-   color: white; 
-   text-decoration: none; 
-   padding: 12px 30px; 
-   border-radius: 25px; 
-   font-weight: bold; 
-   transition: background 0.3s; 
+ background-color: #ffa148; 
+ color: white; 
+ text-decoration: none; 
+ padding: 12px 30px; 
+ border-radius: 25px; 
+ font-weight: bold; 
+ transition: background 0.3s; 
  }/* O BOTAOZINHO DE ENVIAR*/ 
  
  .custom-banner .btn-enviar:hover { 
-   background-color: #ff8c00; 
+ background-color: #ff8c00; 
  } 
-  .custom-banner .image-box { 
-   flex: 1; 
-   position: relative; 
+ .custom-banner .image-box { 
+ flex: 1; 
+ position: relative; 
  } 
 
 input.is-invalid,
 select.is-invalid,
 textarea.is-invalid {
-  border: 2px solid #dc3545 !important;
-  background-color: #fff0f0 !important;
+ border: 2px solid #dc3545 !important;
+ background-color: #fff0f0 !important;
 }
 
  /* ------------------------------------------ 
-    SEÇÃO SOBRE 
+ SEÇÃO SOBRE 
  ------------------------------------------ */ 
  section.bg-white h3 { 
-   font-size: 1.8rem; 
+ font-size: 1.8rem; 
  } 
  section.bg-white .icon-wrapper { 
-   background-color: #fff7dd; 
-   box-shadow: 0 4px 12px rgba(255, 203, 58, 0.1); 
+ background-color: #fff7dd; 
+ box-shadow: 0 4px 12px rgba(255, 203, 58, 0.1); 
  } 
  section.bg-white h5 { 
-   font-weight: 600; 
-   margin-bottom: 0.5rem; 
+ font-weight: 600; 
+ margin-bottom: 0.5rem; 
  } 
-  section.bg-white p { 
-   font-size: 0.95rem; 
+ section.bg-white p { 
+ font-size: 0.95rem; 
  } 
  
-  /* ------------------------------------------ 
-    NEWSLETTER 
+ /* ------------------------------------------ 
+ NEWSLETTER 
  ------------------------------------------ */ 
  section.bg-dark { 
-   background: linear-gradient(135deg, #1f1f1f, #2a2a2a); 
-   color: white; 
+ background: linear-gradient(135deg, #1f1f1f, #2a2a2a); 
+ color: white; 
  } 
  section.bg-dark h3 { 
-   font-size: 1.6rem; 
+ font-size: 1.6rem; 
  } 
-  section.bg-dark .form-control { 
-   border: none; 
-   border-radius: 30px 0 0 30px; 
-   padding: 0.75rem 1.25rem; 
+ section.bg-dark .form-control { 
+ border: none; 
+ border-radius: 30px 0 0 30px; 
+ padding: 0.75rem 1.25rem; 
  } 
  section.bg-dark .btn-warning { 
-   border-radius: 0 30px 30px 0; 
-   font-weight: 500; 
+ border-radius: 0 30px 30px 0; 
+ font-weight: 500; 
  } 
  
-   /* ------------------------------------------ 
-    RODAPÉ 
+ /* ------------------------------------------ 
+ RODAPÉ 
  ------------------------------------------ */ 
  footer { 
-   background-color: #121212; 
-   color: white; 
+ background-color: #121212; 
+ color: white; 
  } 
-  footer h6 { 
-   font-weight: 600; 
-   font-size: 1rem; 
+ footer h6 { 
+ font-weight: 600; 
+ font-size: 1rem; 
  } 
-  footer a { 
-   transition: color 0.2s ease; 
+ footer a { 
+ transition: color 0.2s ease; 
  } 
-  footer a:hover { 
-   color: #ffcb55; 
+ footer a:hover { 
+ color: #ffcb55; 
  } 
-  footer .bi { 
-   transition: transform 0.3s ease; 
+ footer .bi { 
+ transition: transform 0.3s ease; 
  } 
-  footer .bi:hover { 
-   transform: scale(1.2); 
-   color: #ffcb55; 
+ footer .bi:hover { 
+ transform: scale(1.2); 
+ color: #ffcb55; 
  } 
-  footer hr { 
-   opacity: 0.1; 
+ footer hr { 
+ opacity: 0.1; 
  } 
-  footer p, 
+ footer p, 
  footer li, 
  footer small { 
-   font-size: 0.9rem; 
-   line-height: 1.6; 
+ font-size: 0.9rem; 
+ line-height: 1.6; 
  } 
  
-   /* ------------------------------ 
-    Página de Receita Individual 
+ /* ------------------------------ 
+ Página de Receita Individual 
  ------------------------------ */ 
-  main { 
-   background: linear-gradient(120deg, #fff4e3, #ffe9cc); 
-   padding-top: 4rem; 
-   padding-bottom: 4rem; 
+ main { 
+ background: linear-gradient(120deg, #fff4e3, #ffe9cc); 
+ padding-top: 4rem; 
+ padding-bottom: 4rem; 
  } 
  
  main h2 { 
-   font-weight: 700; 
-   font-size: 2.2rem; 
-   color: #444; 
+ font-weight: 700; 
+ font-size: 2.2rem; 
+ color: #444; 
  } 
  main ul, main ol { 
-   font-size: 1rem; 
-   line-height: 1.8; 
-   padding-left: 1.2rem; 
-   color: #444; 
+ font-size: 1rem; 
+ line-height: 1.8; 
+ padding-left: 1.2rem; 
+ color: #444; 
  } 
  main h5 { 
-   font-weight: 600; 
-   margin-bottom: 0.75rem; 
-   color: #333; 
+ font-weight: 600; 
+ margin-bottom: 0.75rem; 
+ color: #333; 
  } 
-  main img { 
-   border-radius: 1rem; 
-   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08); 
+ main img { 
+ border-radius: 1rem; 
+ box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08); 
  } 
  
  main p { 
-   font-size: 1rem; 
-   color: #555; 
+ font-size: 1rem; 
+ color: #555; 
  } 
-  main .border { 
-   background-color: #fffdf8; 
-   border: 1px solid #ffe6b8; 
-   border-radius: 12px; 
-   font-size: 0.95rem; 
-   color: #333; 
-   box-shadow: 0 4px 12px rgba(255, 204, 100, 0.08); 
+ main .border { 
+ background-color: #fffdf8; 
+ border: 1px solid #ffe6b8; 
+ border-radius: 12px; 
+ font-size: 0.95rem; 
+ color: #333; 
+ box-shadow: 0 4px 12px rgba(255, 204, 100, 0.08); 
  } 
-  .ratio iframe { 
-   border-radius: 1rem; 
-   border: 1px solid #f0f0f0; 
+ .ratio iframe { 
+ border-radius: 1rem; 
+ border: 1px solid #f0f0f0; 
  } 
  
-   /* === Página receitas.html === */ 
-    .receitas-section { 
-     padding: 3rem 2rem; 
-     text-align: center; 
-   } 
-   
-   .titulo-receitas { 
-     font-size: 2.2rem; 
-     margin-bottom: 2rem; 
-     font-weight: 600; 
-   } 
-   
-   .filtros { 
-     display: flex; 
-     justify-content: center; 
-     gap: 1rem; 
-     margin-bottom: 2rem; 
-     flex-wrap: wrap; 
-   } 
-   
-   .filtro-btn { 
-     padding: 0.6rem 1.2rem; 
-     border: 2px solid #00000015; 
-     background-color: #ffffff; 
-     border-radius: 25px; 
-     cursor: pointer; 
-     font-weight: 500; 
-     transition: all 0.3s ease; 
-   } 
-   
-   .filtro-btn:hover, 
-   .filtro-btn.ativo { 
-     background-color: #ffdd8d; 
-     border-color: #f5c000; 
-   } 
-   
-   .cards-receitas { 
-     display: grid; 
-     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
-     gap: 2rem; 
-     max-width: 1200px; 
-     margin: auto; 
-   } 
-   
-   .card-receita { 
-     background-color: white; 
-     border-radius: 12px; 
-     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.07); 
-     overflow: hidden; 
-     text-align: left; 
-     transition: transform 0.3s ease; 
-   } 
-   
-   .card-receita:hover { 
-     transform: scale(1.02); 
-   } 
-   
-   .card-receita img { 
-     width: 100%; 
-     height: 180px; 
-     object-fit: cover; 
-   } 
-   
-   .card-receita .texto { 
-     padding: 1rem; 
-   } 
-   
-   .card-receita h3 { 
-     font-size: 1.2rem; 
-     margin: 0 0 0.5rem 0; 
-   } 
+ /* === Página receitas.html === */ 
+ .receitas-section { 
+ padding: 3rem 2rem; 
+ text-align: center; 
+ } 
  
-   /* Ajustes de Responsividade */ 
+ .titulo-receitas { 
+ font-size: 2.2rem; 
+ margin-bottom: 2rem; 
+ font-weight: 600; 
+ } 
+ 
+ .filtros { 
+ display: flex; 
+ justify-content: center; 
+ gap: 1rem; 
+ margin-bottom: 2rem; 
+ flex-wrap: wrap; 
+ } 
+ 
+ .filtro-btn { 
+ padding: 0.6rem 1.2rem; 
+ border: 2px solid #00000015; 
+ background-color: #ffffff; 
+ border-radius: 25px; 
+ cursor: pointer; 
+ font-weight: 500; 
+ transition: all 0.3s ease; 
+ } 
+ 
+ .filtro-btn:hover, 
+ .filtro-btn.ativo { 
+ background-color: #ffdd8d; 
+ border-color: #f5c000; 
+ } 
+ 
+ .cards-receitas { 
+ display: grid; 
+ grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
+ gap: 2rem; 
+ max-width: 1200px; 
+ margin: auto; 
+ } 
+ 
+ .card-receita { 
+ background-color: white; 
+ border-radius: 12px; 
+ box-shadow: 0 4px 10px rgba(0, 0, 0, 0.07); 
+ overflow: hidden; 
+ text-align: left; 
+ transition: transform 0.3s ease; 
+ } 
+ 
+ .card-receita:hover { 
+ transform: scale(1.02); 
+ } 
+ 
+ .card-receita img { 
+ width: 100%; 
+ height: 180px; 
+ object-fit: cover; 
+ } 
+ 
+ .card-receita .texto { 
+ padding: 1rem; 
+ } 
+ 
+ .card-receita h3 { 
+ font-size: 1.2rem; 
+ margin: 0 0 0.5rem 0; 
+ } 
+ 
+ /* Ajustes de Responsividade */ 
 @media (max-width: 992px) { 
  .header-pill { 
-   border-radius: 20px !important; 
-   padding: 0.5rem !important; 
+ border-radius: 20px !important; 
+ padding: 0.5rem !important; 
  } 
-  .hero-section h2 { 
-   font-size: 2.5rem; 
+ .hero-section h2 { 
+ font-size: 2.5rem; 
  } 
 } 
  
 @media (max-width: 768px) { 
  .custom-banner .card { 
-   border-radius: 20px !important; 
+ border-radius: 20px !important; 
  } 
-  .recipe-section .card { 
-   margin-bottom: 1.5rem; 
+ .recipe-section .card { 
+ margin-bottom: 1.5rem; 
  } 
 } 
  
 @media (max-width: 576px) { 
  .hero-section h2 { 
-   font-size: 2rem; 
+ font-size: 2rem; 
  } 
-  .btn-enviar { 
-   width: 100%; 
+ .btn-enviar { 
+ width: 100%; 
  } 
 } 
+/* Estilos para a página Sobre */
+.hero-about {
+ background: linear-gradient(135deg, rgba(255,243,224,0.8) 0%, rgba(255,243,224,0.9) 100%), 
+ url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');
+ background-size: cover;
+ background-position: center;
+ min-height: 500px;
+ display: flex;
+ align-items: center;
+}
 
-/* */ 
+.team-card {
+ transition: all 0.3s ease;
+ border-radius: 1rem;
+ overflow: hidden;
+}
+
+.team-card:hover {
+ transform: translateY(-10px);
+ box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+}
+
+.team-img {
+ height: 300px;
+ background-size: cover;
+ background-position: center;
+}
+
+ /* Ajustes de Responsividade */ 
+ @media (max-width: 992px) { 
+ .header-pill { 
+ border-radius: 20px !important; 
+ padding: 0.5rem !important; 
+ } 
+ .hero-section h2 { 
+ font-size: 2.5rem; 
+ } 
+ } 
+ 
+ @media (max-width: 768px) { 
+ .custom-banner .card { 
+ border-radius: 20px !important; 
+ } 
+ .recipe-section .card { 
+ margin-bottom: 1.5rem; 
+ } 
+ } 
+ 
+ @media (max-width: 576px) { 
+ .hero-section h2 { 
+ font-size: 2rem; 
+ } 
+ .btn-enviar { 
+ width: 100%; 
+ } 
+ } 
+@media (max-width: 768px) {
+ .hero-about {
+ min-height: auto;
+ padding: 4rem 0;
+ }
+ 
+ .team-img {
+ height: 200px;
+ }
+}
+
+/* Animações da pagina*/ 
 .texto-animado {
   opacity: 0;
   transform: translateY(20px);
